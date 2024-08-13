@@ -3118,7 +3118,7 @@ void ocpp_task(void *p)
 
 		case flag_EVSE_is_Booted:
 		{
-			Serial.println("boot 1");
+			// Serial.println("boot 1");
 			switch (evse_boot_state)
 			{
 			case EVSE_BOOT_INITIATED:
@@ -3415,7 +3415,7 @@ void ocpp_task(void *p)
 
 		case falg_EVSE_Authentication:
 		{
-			Serial.println("auth 1");
+			// Serial.println("auth 1");
 			if (gu8_evse_change_state == EVSE_AUTHENTICATION)
 			{
 
@@ -3423,7 +3423,7 @@ void ocpp_task(void *p)
 				{
 				case EVSE_AUTHORIZE_INITIATED:
 				{
-					Serial.println("auth 2");
+					// Serial.println("auth 2");
 					/*brief using mutex to update values*/
 					portENTER_CRITICAL(&rfid_tag_mux);
 					ocpp_rfid = rfid_buf;
@@ -3621,7 +3621,7 @@ EvseDevStatus_connector_1 = flag_EVSE_Start_Transaction;
 		}
 		case flag_EVSE_Start_Transaction:
 		{
-Serial.println("start 1");
+// Serial.println("start 1");
 			switch (evse_start_txn_state)
 			{
 
@@ -3775,7 +3775,7 @@ Serial.println("start 1");
 
 		case flag_EVSE_Request_Charge:
 		{
-			Serial.println("request charge 1");
+			// Serial.println("request charge 1");
 			// vTaskDelay(700 / portTICK_PERIOD_MS);
 			if(alternet_10d_flag == 2)
 			{
@@ -3868,7 +3868,7 @@ Serial.println("start 1");
 
 		case flag_EVSE_Stop_Transaction:
 		{
-Serial.println("stop txn 1");
+// Serial.println("stop txn 1");
 #if 1
 			switch (evse_stop_txn_state)
 			{
@@ -4035,7 +4035,7 @@ Serial.println("stop txn 1");
 
 		case flag_EVSE_UnAutharized:
 		{
-			Serial.println("unauthorize 1");
+			// Serial.println("unauthorize 1");
 			if (gu8_evse_change_state == EVSE_UNAUTHENTICATION)
 			{
 				if (gu8_state_change++ > 10)
